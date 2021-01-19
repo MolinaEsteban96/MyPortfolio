@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esteban Molina - Fullstack Developer</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="app">
+        <nav class="navbar navbar-expand-sm navbar-light justify-content-center">
+            <transition name="navbrand" appear>
+                <a class="navbar-brand p-2" href="" @click="control = 0">Esteban Molina - Fullstack Developer</a>
+            </transition>
+        </nav>  
+
+        <div class="main">
+            
+            
+            
+            <div v-if="control == 0">
+                
+                <div class="container">
+                    <div class="row text-center m-auto">
+                        <transition name="col1" appear>
+                            <div class="col-sm-12 col-md-6 mt-3 col-lg-4">
+                                <div class="card p-5" @click="control = 1" style="width: 18rem; height: 25rem;">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Tecnologías</h5>
+                                        <h6 class="card-subtitle mb-2 text-muted">Technologies</h6>
+                                        <p class="card-text">Las tecnologías en las que me desempeño.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </transition>
+                        
+                        <transition name="col2" appear>
+                            <div class="col-sm-12 col-md-6 mt-3 col-lg-4">
+                                <div class="card p-5" @click="control = 2" style="width: 18rem; height: 25rem;">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Proyectos</h5>
+                                        <h6 class="card-subtitle mb-2 text-muted">Projects</h6>
+                                        <p class="card-text">Mi lista de proyectos</p>
+                                    
+                                    </div>
+                                </div>
+                            </div>
+                        </transition>
+
+                        <transition name="col3" appear>
+                            <div class="col-sm-12 col-md-12 mt-3 col-lg-4">
+                                <div class="card p-5" @click="control = 3" style="width: 18rem; height: 25rem;">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Perfil</h5>
+                                        <h6 class="card-subtitle mb-2 text-muted">Profile</h6>
+                                        <p class="card-text">Mi perfil de contacto</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </transition>
+                    </div>
+                </div>
+        
+            </div>
+            
+            <div v-if="control == 1">
+                <div class="container" id="tech">
+                    <div class="row mt-3 text-center">
+                        <div class="col-md-12">
+                            <h1>Tecnologías</h1>
+                        </div>
+                    </div>
+                    <div class="row text-center mt-5">
+                        <div class="col-md-12">
+                            <h3>Frontend</h3>
+                            <div class="mt-4 mb-4">
+                                <img class="px-4" src="assets/imgs/vue.svg" alt="vuelogo">
+                                <img class="px-4" src="assets/imgs/html5.svg" alt="htmllogo">
+                                <img class="px-4" src="assets/imgs/css.svg" alt="csslogo">
+                                <img class="px-4" src="assets/imgs/bootstrap.svg" alt="bootstraplogo">
+                                <img class="px-4" src="assets/imgs/jquery.svg" alt="jquerylogo">
+                                <img class="px-4" src="assets/imgs/javascript.svg" alt="jslogo">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row text-center">
+                        <div class="col-md-12">
+                            <h3>Backend</h3>
+                            <div class="mt-4">
+                                <img class="px-4" src="assets/imgs/java.svg" alt="javalogo">
+                                <img class="px-4" src="assets/imgs/spring.svg" alt="springlogo">
+                                <img class="px-4" src="assets/imgs/mysql.svg" alt="mysqllogo">
+                                <img class="px-2" src="assets/imgs/hibernate.svg" alt="hibernatelogo">
+                            </div>
+                        </div>
+                    </div>    
+                </div>
+            </div>
+            
+            <div v-if="control == 2">
+                <div class="container" id="projects">
+                    <div class="row mt-3 mb-3 text-center">
+                        <div class="col-md-12">
+                            <h1>Mis Proyectos</h1>
+                        </div>
+                    </div>
+                    <div class="row mt-5 text-center">
+                        <div class="col-md-6">
+                            <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:6755592706573045761?compact=1" height="284" width="504" frameborder="0" allowfullscreen="" title="Publicación integrada"></iframe>
+                        </div>
+                        <div class="col-md-6 m-auto">
+                            <h2>ImageBoard con Bootstrap, Vue.js, Hibernate y Spring Framework</h2>
+                            <p>Tablón de imagenes actualizado dinámicamente. 
+                                Posee un modal para la inserción de nuevas imágenes que
+                                mediante ORM se ingresan a la base de datos y desde allí se recuperan
+                                mediante una API que es ingresada al frontend con la instancia de Vue.
+                            </p>
+                            <a href="https://github.com/MolinaEsteban96/ImageClopedia" class="text-dark" style="text-decoration:none;" target="_blank"><h6>Ver en <img src="assets/imgs/github.svg" alt="githublogo" style="height: 45px; width: 45px;"></h6></a>
+                        </div>
+                    </div>
+                    <div class="row mt-3 text-center">
+                        <div class="col-md-6">
+                            <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:6754911439774920704?compact=1" height="284" width="504" frameborder="0" allowfullscreen="" title="Publicación integrada"></iframe>
+                        </div>
+                        <div class="col-md-6 m-auto">
+                            <h2>Pagina web con ingreso a BBDD con Hibernate y Spring Framework</h2>
+                            <p>
+                                Página web con registro en base de datos e inicio de sesión. 
+                                Injección de codigo dinámico con Vue.js.
+                            </p>
+                            <a href="https://github.com/MolinaEsteban96/indioproject" class="text-dark" style="text-decoration:none;" target="_blank"><h6>Ver en <img src="assets/imgs/github.svg" alt="githublogo" style="height: 45px; width: 45px;"></h6></a>
+                        </div>
+                    </div>
+                    <div class="row mt-3 text-center">
+                        <div class="col-md-6">
+                            <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:6757039735576809472?compact=1" height="284" width="504" frameborder="0" allowfullscreen="" title="Publicación integrada"></iframe>
+                        </div>
+                        <div class="col-md-6 m-auto">
+                            <h2>Consumo de API para la cotización del dólar</h2>
+                            <p>
+                                Página web con consumo de API. Muestra por pantalla los precios de las variantes del dólar.
+                                Injección de codigo dinámico con Vue.js.
+                            </p>
+                            <a href="https://molinaesteban96.github.io/vue.js-apiRequest" class="text-dark mt-3" style="text-decoration:none;" target="_blank"><h6>Ver la página</h6></a>
+                            <a href="https://github.com/MolinaEsteban96/vue.js-apiRequest" class="text-dark" style="text-decoration:none;" target="_blank"><h6>Ver en <img src="assets/imgs/github.svg" alt="githublogo" style="height: 45px; width: 45px;"></h6></a>
+                        </div>
+                    </div>
+                    <div class="row mt-3 text-center">
+                        <div class="col-md-6">
+                            <div style="width:92%;height:0px;position:relative;left:20px ;padding-bottom:56.388%;"><iframe src="https://streamable.com/e/klu3n7" frameborder="0" width="100%" height="100%" allowfullscreen style="width:100%;height:100%;position:absolute;left:0px;top:0px;overflow:hidden;"></iframe></div>
+                        </div>
+                        <div class="col-md-6 m-auto">
+                            <h2>Vue CRUD</h2>
+                            <p>
+                               Ejercicio CRUD para añadir, leer, editar o borrar nombres y edades.
+                            </p>
+                            <a href="https://molinaesteban96.github.io/VueCRUD" class="text-dark mt-3" style="text-decoration:none;" target="_blank"><h6>Ver la página</h6></a>
+                            <a href="https://github.com/MolinaEsteban96/VueCRUD" class="text-dark" style="text-decoration:none;" target="_blank"><h6>Ver en <img src="assets/imgs/github.svg" alt="githublogo" style="height: 45px; width: 45px;"></h6></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div v-if="control == 3">
+                <div class="container" id="contact">
+                    <div class="row mt-5 text-center">
+                        <div class="col-md-6">
+                            <img src="assets/imgs/myphoto.jpg" alt="myphoto">
+                        </div>
+                        <div class="col-md-6 m-auto">
+                            <h1>Mi contacto</h1>
+                            <p class="mt-5"><strong>Teléfono:</strong>(+54)1141456326</p>
+                            <p><strong>Correo electrónico:</strong> Estebanjm2014@hotmail.com</p>
+                        </div>
+                    </div>
+                    <div class="row mt-5 text-center">
+                        <a href="https://www.linkedin.com/in/esteban-molina-60b835114" class="text-dark" style="text-decoration: none;" target="_blank"><h3>Perfil de <img src="assets/imgs/linkedin.svg" style="height: 95px; width: 95px; position: relative;bottom:2px;" alt="linkedinlogo"></h3></a>
+                    </div>
+                    <div class="row mt-3 text-center">
+                        <a href="https://github.com/MolinaEsteban96" class="text-dark" style="text-decoration: none;" target="_blank"><h3>Cuenta de <img src="assets/imgs/github.svg" style="height: 70px; width: 70px;position: relative;bottom:2px" alt="github"></h3></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <script src="control.js"></script>
+</body>
+</html>

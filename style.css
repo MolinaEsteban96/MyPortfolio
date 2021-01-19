@@ -1,0 +1,79 @@
+body {
+
+    background: #e1cbcb;
+}
+
+nav {
+
+    background: #d4ced6 ;
+}
+
+h1, a, h3{
+    font-family: 'Lobster', cursive;
+}
+
+.card {
+
+    position: relative;
+    top: 100px;
+    opacity: 0.80;
+}
+
+.card:hover {
+
+    background: #BC8283;
+    color: white;
+}
+
+#tech img {
+
+    height: 100px;
+    width: 100px;
+}
+
+.col1-enter{
+
+    opacity: 0;
+    transform: translateY(-100px);
+}
+
+.col1-enter-active {
+
+    transition: .5s;
+    transition-delay: .3s;
+}
+
+.col2-enter {
+
+    opacity: 0;
+    transform: translateY(100px);
+}
+
+.col2-enter-active {
+
+    transition: .5s;
+    transition-delay: 1s;
+}
+
+.col3-enter {
+
+    opacity: 0;
+    transform: translateY(-100px);
+}
+
+.col3-enter-active {
+
+    transition: 0.5s;
+    transition-delay: 1.5s;
+}
+
+.navbrand-enter {
+
+    opacity: 0;
+}
+
+.navbrand-enter-active {
+
+    transition: 0.5s;
+    transition-delay: 1s;
+}
