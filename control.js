@@ -5,7 +5,8 @@ const app = new Vue({
     data: {
 
         message: "Hola Mundo",
-        control: 0
+        control: 0,
+        projectRow: 0
     },
 
     methods: {

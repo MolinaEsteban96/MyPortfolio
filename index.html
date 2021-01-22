@@ -13,7 +13,7 @@
     <div id="app">
         <nav class="navbar navbar-expand-sm navbar-light justify-content-center">
             <transition name="navbrand" appear>
-                <a class="navbar-brand p-2" href="" @click="control = 0">Esteban Molina - Fullstack Developer</a>
+                <a class="navbar-brand p-2" @click="control = 0">Esteban Molina - Fullstack Developer</a>
             </transition>
         </nav>  
 
@@ -68,33 +68,54 @@
             
             <div v-if="control == 1">
                 <div class="container" id="tech">
-                    <div class="row mt-3 text-center">
-                        <div class="col-md-12">
+                    
+                    <div class="row mt-3 text-center" id="titleRow">
+                        
+                        <div class="col-md-4">
+                            <h4 class="p-2" @click="control = 0">Home</h3>
+                        </div>
+                        <div class="col-md-4">
                             <h1>Tecnologías</h1>
                         </div>
+                        <div class="col-md-4">
+                            <h4 class="p-2" @click="control = 2">Proyectos</h3>
+                        </div>
+                        
                     </div>
+                    
+                    
                     <div class="row text-center mt-5">
                         <div class="col-md-12">
-                            <h3>Frontend</h3>
-                            <div class="mt-4 mb-4">
-                                <img class="px-4" src="assets/imgs/vue.svg" alt="vuelogo">
-                                <img class="px-4" src="assets/imgs/html5.svg" alt="htmllogo">
-                                <img class="px-4" src="assets/imgs/css.svg" alt="csslogo">
-                                <img class="px-4" src="assets/imgs/bootstrap.svg" alt="bootstraplogo">
-                                <img class="px-4" src="assets/imgs/jquery.svg" alt="jquerylogo">
-                                <img class="px-4" src="assets/imgs/javascript.svg" alt="jslogo">
-                            </div>
+                            <transition name="frontTitle" appear>
+                                <h3>Frontend</h3>
+                            </transition>
+                            
+                            <transition name="frontLogos" appear>
+                                <div class="mt-4 mb-4">
+                                    <img class="px-4" src="assets/imgs/vue.svg" alt="vuelogo">
+                                    <img class="px-4" src="assets/imgs/html5.svg" alt="htmllogo">
+                                    <img class="px-4" src="assets/imgs/css.svg" alt="csslogo">
+                                    <img class="px-4" src="assets/imgs/bootstrap.svg" alt="bootstraplogo">
+                                    <img class="px-4" src="assets/imgs/jquery.svg" alt="jquerylogo">
+                                    <img class="px-4" src="assets/imgs/javascript.svg" alt="jslogo">
+                                </div>
+                            </transition>
                         </div>
                     </div>
+                    
                     <div class="row text-center">
                         <div class="col-md-12">
-                            <h3>Backend</h3>
-                            <div class="mt-4">
-                                <img class="px-4" src="assets/imgs/java.svg" alt="javalogo">
-                                <img class="px-4" src="assets/imgs/spring.svg" alt="springlogo">
-                                <img class="px-4" src="assets/imgs/mysql.svg" alt="mysqllogo">
-                                <img class="px-2" src="assets/imgs/hibernate.svg" alt="hibernatelogo">
-                            </div>
+                            <transition name="backTitle" appear>
+                                <h3>Backend</h3>
+                            </transition>
+                            <transition name="backLogos" appear>
+                                <div class="mt-4">
+                                    <img class="px-4" src="assets/imgs/java.svg" alt="javalogo">
+                                    <img class="px-4" src="assets/imgs/spring.svg" alt="springlogo">
+                                    <img class="px-4" src="assets/imgs/mysql.svg" alt="mysqllogo">
+                                    <img class="px-2" src="assets/imgs/hibernate.svg" alt="hibernatelogo">
+                                </div>
+                            </transition>
                         </div>
                     </div>    
                 </div>
@@ -102,85 +123,138 @@
             
             <div v-if="control == 2">
                 <div class="container" id="projects">
-                    <div class="row mt-3 mb-3 text-center">
-                        <div class="col-md-12">
+                    <div class="row mt-3 mb-3 text-center" id="titleRow">
+                        <div class="col-md-4">
+                            <h4 class="p-2" @click="control = 1">Tecnologías</h3>
+                        </div>
+                        <div class="col-md-4">
                             <h1>Mis Proyectos</h1>
                         </div>
-                    </div>
-                    <div class="row mt-5 text-center">
-                        <div class="col-md-6">
-                            <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:6755592706573045761?compact=1" height="284" width="504" frameborder="0" allowfullscreen="" title="Publicación integrada"></iframe>
-                        </div>
-                        <div class="col-md-6 m-auto">
-                            <h2>ImageBoard con Bootstrap, Vue.js, Hibernate y Spring Framework</h2>
-                            <p>Tablón de imagenes actualizado dinámicamente. 
-                                Posee un modal para la inserción de nuevas imágenes que
-                                mediante ORM se ingresan a la base de datos y desde allí se recuperan
-                                mediante una API que es ingresada al frontend con la instancia de Vue.
-                            </p>
-                            <a href="https://github.com/MolinaEsteban96/ImageClopedia" class="text-dark" style="text-decoration:none;" target="_blank"><h6>Ver en <img src="assets/imgs/github.svg" alt="githublogo" style="height: 45px; width: 45px;"></h6></a>
+                        <div class="col-md-4">
+                            <h4 class="p-2" @click="control = 3">Contacto</h3>
                         </div>
                     </div>
-                    <div class="row mt-3 text-center">
-                        <div class="col-md-6">
-                            <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:6754911439774920704?compact=1" height="284" width="504" frameborder="0" allowfullscreen="" title="Publicación integrada"></iframe>
+                    <div v-if="projectRow == 0">
+                        <div class="row mt-5 text-center">
+                            <div class="col-md-6">
+                                <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:6755592706573045761?compact=1" height="284" width="504" frameborder="0" allowfullscreen="" title="Publicación integrada"></iframe>
+                            </div>
+                            <div class="col-md-6 m-auto">
+                                <h2>ImageBoard con Bootstrap, Vue.js, Hibernate y Spring Framework</h2>
+                                <p>Tablón de imagenes actualizado dinámicamente. 
+                                    Posee un modal para la inserción de nuevas imágenes que
+                                    mediante ORM se ingresan a la base de datos y desde allí se recuperan
+                                    mediante una API que es ingresada al frontend con la instancia de Vue.
+                                </p>
+                                <a href="https://github.com/MolinaEsteban96/ImageClopedia" class="text-dark" style="text-decoration:none;" target="_blank"><h6>Ver en <img src="assets/imgs/github.svg" alt="githublogo" style="height: 45px; width: 45px;"></h6></a>
+                            </div>
                         </div>
-                        <div class="col-md-6 m-auto">
-                            <h2>Pagina web con ingreso a BBDD con Hibernate y Spring Framework</h2>
-                            <p>
-                                Página web con registro en base de datos e inicio de sesión. 
-                                Injección de codigo dinámico con Vue.js.
-                            </p>
-                            <a href="https://github.com/MolinaEsteban96/indioproject" class="text-dark" style="text-decoration:none;" target="_blank"><h6>Ver en <img src="assets/imgs/github.svg" alt="githublogo" style="height: 45px; width: 45px;"></h6></a>
-                        </div>
-                    </div>
-                    <div class="row mt-3 text-center">
-                        <div class="col-md-6">
-                            <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:6757039735576809472?compact=1" height="284" width="504" frameborder="0" allowfullscreen="" title="Publicación integrada"></iframe>
-                        </div>
-                        <div class="col-md-6 m-auto">
-                            <h2>Consumo de API para la cotización del dólar</h2>
-                            <p>
-                                Página web con consumo de API. Muestra por pantalla los precios de las variantes del dólar.
-                                Injección de codigo dinámico con Vue.js.
-                            </p>
-                            <a href="https://molinaesteban96.github.io/vue.js-apiRequest" class="text-dark mt-3" style="text-decoration:none;" target="_blank"><h6>Ver la página</h6></a>
-                            <a href="https://github.com/MolinaEsteban96/vue.js-apiRequest" class="text-dark" style="text-decoration:none;" target="_blank"><h6>Ver en <img src="assets/imgs/github.svg" alt="githublogo" style="height: 45px; width: 45px;"></h6></a>
+                        <div class="row mt-5 text-center">
+                            <div class="col-md-12">
+                                <h3 @click="projectRow = 1">Siguiente</h3>
+                            </div>
                         </div>
                     </div>
-                    <div class="row mt-3 text-center">
-                        <div class="col-md-6">
-                            <div style="width:92%;height:0px;position:relative;left:20px ;padding-bottom:56.388%;"><iframe src="https://streamable.com/e/klu3n7" frameborder="0" width="100%" height="100%" allowfullscreen style="width:100%;height:100%;position:absolute;left:0px;top:0px;overflow:hidden;"></iframe></div>
+                    <div v-if="projectRow == 1">
+                        <div class="row mt-5 text-center">
+                            <div class="col-md-6">
+                                <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:6754911439774920704?compact=1" height="284" width="504" frameborder="0" allowfullscreen="" title="Publicación integrada"></iframe>
+                            </div>
+                            <div class="col-md-6 m-auto">
+                                <h2>Pagina web con ingreso a BBDD con Hibernate y Spring Framework</h2>
+                                <p>
+                                    Página web con registro en base de datos e inicio de sesión. 
+                                    Injección de codigo dinámico con Vue.js.
+                                </p>
+                                <a href="https://github.com/MolinaEsteban96/indioproject" class="text-dark" style="text-decoration:none;" target="_blank"><h6>Ver en <img src="assets/imgs/github.svg" alt="githublogo" style="height: 45px; width: 45px;"></h6></a>
+                            </div>
                         </div>
-                        <div class="col-md-6 m-auto">
-                            <h2>Vue CRUD</h2>
-                            <p>
-                               Ejercicio CRUD para añadir, leer, editar o borrar nombres y edades.
-                            </p>
-                            <a href="https://molinaesteban96.github.io/VueCRUD" class="text-dark mt-3" style="text-decoration:none;" target="_blank"><h6>Ver la página</h6></a>
-                            <a href="https://github.com/MolinaEsteban96/VueCRUD" class="text-dark" style="text-decoration:none;" target="_blank"><h6>Ver en <img src="assets/imgs/github.svg" alt="githublogo" style="height: 45px; width: 45px;"></h6></a>
+                        <div class="row mt-5 text-center">
+                            <div class="col-md-6">
+                                <h3 @click="projectRow = 0">Anterior</h3>
+                            </div>
+                            <div class="col-md-6">
+                                <h3 @click="projectRow = 2">Siguiente</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div v-if="projectRow == 2">
+                        <div class="row mt-5 text-center">
+                            <div class="col-md-6">
+                                <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:6757039735576809472?compact=1" height="284" width="504" frameborder="0" allowfullscreen="" title="Publicación integrada"></iframe>
+                            </div>
+                            <div class="col-md-6 m-auto">
+                                <h2>Consumo de API para la cotización del dólar</h2>
+                                <p>
+                                    Página web con consumo de API. Muestra por pantalla los precios de las variantes del dólar.
+                                    Injección de codigo dinámico con Vue.js.
+                                </p>
+                                <a href="https://molinaesteban96.github.io/vue.js-apiRequest" class="text-dark mt-3" style="text-decoration:none;" target="_blank"><h6>Ver la página</h6></a>
+                                <a href="https://github.com/MolinaEsteban96/vue.js-apiRequest" class="text-dark" style="text-decoration:none;" target="_blank"><h6>Ver en <img src="assets/imgs/github.svg" alt="githublogo" style="height: 45px; width: 45px;"></h6></a>
+                            </div>
+                        </div>
+                        <div class="row mt-5 text-center">
+                            <div class="col-md-6">
+                                <h3 @click="projectRow = 1">Anterior</h3>
+                            </div>
+                            <div class="col-md-6">
+                                <h3 @click="projectRow = 3">Siguiente</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div v-if="projectRow == 3">
+                        <div class="row mt-5 text-center">
+                            <div class="col-md-6">
+                                <div style="width:92%;height:0px;position:relative;left:20px ;padding-bottom:56.388%;"><iframe src="https://streamable.com/e/klu3n7" frameborder="0" width="100%" height="100%" allowfullscreen style="width:100%;height:100%;position:absolute;left:0px;top:0px;overflow:hidden;"></iframe></div>
+                            </div>
+                            <div class="col-md-6 m-auto">
+                                <h2>Vue CRUD</h2>
+                                <p>
+                                   Ejercicio CRUD para añadir, leer, editar o borrar nombres y edades.
+                                </p>
+                                <a href="https://molinaesteban96.github.io/VueCRUD" class="text-dark mt-3" style="text-decoration:none;" target="_blank"><h6>Ver la página</h6></a>
+                                <a href="https://github.com/MolinaEsteban96/VueCRUD" class="text-dark" style="text-decoration:none;" target="_blank"><h6>Ver en <img src="assets/imgs/github.svg" alt="githublogo" style="height: 45px; width: 45px;"></h6></a>
+                            </div>
+                        </div>
+                        <div class="row mt-5 text-center">
+                            <div class="col-md-12">
+                                <h3 @click="projectRow = 2">Anterior</h3>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
             <div v-if="control == 3">
                 <div class="container" id="contact">
-                    <div class="row mt-5 text-center">
-                        <div class="col-md-6">
+                    <div class="row mt-5 text-center" id="titleRow">
+                        <div class="col-md-3">
+                            <h4 class="p-2" @click="control = 2">Proyectos</h3>
+                        </div>
+                        
+                        <div class="col-md-3">
                             <img src="assets/imgs/myphoto.jpg" alt="myphoto">
                         </div>
-                        <div class="col-md-6 m-auto">
+                        <div class="col-md-3 m-auto">
                             <h1>Mi contacto</h1>
                             <p class="mt-5"><strong>Teléfono:</strong>(+54)1141456326</p>
                             <p><strong>Correo electrónico:</strong> Estebanjm2014@hotmail.com</p>
                         </div>
+                        
+                        
+                        <div class="col-md-3">
+                            <h4 class="p-2" @click="control = 0">Home</h3>
+                        </div>
                     </div>
-                    <div class="row mt-5 text-center">
-                        <a href="https://www.linkedin.com/in/esteban-molina-60b835114" class="text-dark" style="text-decoration: none;" target="_blank"><h3>Perfil de <img src="assets/imgs/linkedin.svg" style="height: 95px; width: 95px; position: relative;bottom:2px;" alt="linkedinlogo"></h3></a>
-                    </div>
-                    <div class="row mt-3 text-center">
-                        <a href="https://github.com/MolinaEsteban96" class="text-dark" style="text-decoration: none;" target="_blank"><h3>Cuenta de <img src="assets/imgs/github.svg" style="height: 70px; width: 70px;position: relative;bottom:2px" alt="github"></h3></a>
-                    </div>
+                    <transition name="transLinks" appear>
+                        <div class="row mt-5 text-center" id="contactLinks">
+                            <a href="https://www.linkedin.com/in/esteban-molina-60b835114" class="text-dark" style="text-decoration: none;" target="_blank"><h3>Perfil de <img src="assets/imgs/linkedin.svg" style="height: 95px; width: 95px; position: relative;bottom:2px;" alt="linkedinlogo"></h3></a>
+                        </div>
+                    </transition>
+                    <transition name="transLinks2" appear>
+                        <div class="row mt-3 text-center" id="contactLinks">
+                            <a href="https://github.com/MolinaEsteban96" class="text-dark" style="text-decoration: none;" target="_blank"><h3>Cuenta de <img src="assets/imgs/github.svg" style="height: 70px; width: 70px;position: relative;bottom:2px" alt="github"></h3></a>
+                        </div>
+                    </transition>
                 </div>
             </div>
         </div>

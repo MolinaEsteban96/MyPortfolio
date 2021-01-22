@@ -46,7 +46,7 @@ h1, a, h3{
 .col2-enter {
 
     opacity: 0;
-    transform: translateY(100px);
+    transform: translateY(-100px);
 }
 
 .col2-enter-active {
@@ -76,4 +76,97 @@ h1, a, h3{
 
     transition: 0.5s;
     transition-delay: 1s;
+}
+
+.frontTitle-enter {
+
+    opacity: 0;
+}
+
+.frontTitle-enter-active {
+
+    transition: 1s;
+}
+
+.frontTitle-enter-to {
+    
+    opacity: 1;
+}
+
+.frontLogos-enter {
+
+    transform: translateX(-200px);
+    opacity: 0;
+}
+
+.frontLogos-enter-active {
+
+    transition: 1s;
+    transition-delay: .5s;
+}
+
+.backTitle-enter {
+
+    opacity: 0;
+}
+
+.backTitle-enter-active {
+
+    transition: 1s;
+    transition-delay: 1s;
+}
+
+.backLogos-enter {
+
+    transform: translateX(200px);
+    opacity: 0;
+}
+
+.backLogos-enter-active {
+
+    transition: 1s;
+    transition-delay: 1.3s;
+}
+
+.contactPhoto-enter { 
+
+    opacity: 0;
+}
+
+.contactPhoto-enter-active {
+
+    transition: 1s;
+}
+
+.transLinks-enter {
+
+    opacity: 0;
+}
+
+.transLinks-enter-active {
+
+    transition: 1.5s;
+}
+
+.transLinks2-enter {
+
+    opacity: 0;
+}
+
+.transLinks2-enter-active {
+
+    transition: 1.5s;
+    transition-delay: .5s;
+}
+
+#titleRow h4:hover {
+
+    background: #BC8283;
+    color: white;
+}
+
+#contactLinks:hover {
+
+    background: #BC8283;
+    color: white;
 }
