@@ -159,6 +159,17 @@ h1, a, h3{
     transition-delay: .5s;
 }
 
+.imageboard-enter {
+
+    opacity: 0;
+}
+
+.imageboard-enter-active {
+
+    transition: 1s;
+    transition-delay: 1s;
+}
+
 #titleRow h4:hover {
 
     background: #BC8283;
@@ -166,6 +177,12 @@ h1, a, h3{
 }
 
 #contactLinks:hover {
+
+    background: #BC8283;
+    color: white;
+}
+
+#selector:hover {
 
     background: #BC8283;
     color: white;

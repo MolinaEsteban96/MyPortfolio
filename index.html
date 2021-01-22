@@ -135,22 +135,25 @@
                         </div>
                     </div>
                     <div v-if="projectRow == 0">
-                        <div class="row mt-5 text-center">
-                            <div class="col-md-6">
-                                <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:6755592706573045761?compact=1" height="284" width="504" frameborder="0" allowfullscreen="" title="Publicación integrada"></iframe>
+                        <transition name="imageboard" appear>
+                            <div class="row mt-5 text-center">
+                                <div class="col-md-6">
+                                    <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:6755592706573045761?compact=1" height="284" width="504" frameborder="0" allowfullscreen="" title="Publicación integrada"></iframe>
+                                </div>
+                                <div class="col-md-6 m-auto">
+                                    <h2>ImageBoard con Bootstrap, Vue.js, Hibernate y Spring Framework</h2>
+                                    <p>Tablón de imagenes actualizado dinámicamente. 
+                                        Posee un modal para la inserción de nuevas imágenes que
+                                        mediante ORM se ingresan a la base de datos y desde allí se recuperan
+                                        mediante una API que es ingresada al frontend con la instancia de Vue.
+                                    </p>
+                                    <a href="https://github.com/MolinaEsteban96/ImageClopedia" class="text-dark" style="text-decoration:none;" target="_blank"><h6>Ver en <img src="assets/imgs/github.svg" alt="githublogo" style="height: 45px; width: 45px;"></h6></a>
+                                </div>
                             </div>
-                            <div class="col-md-6 m-auto">
-                                <h2>ImageBoard con Bootstrap, Vue.js, Hibernate y Spring Framework</h2>
-                                <p>Tablón de imagenes actualizado dinámicamente. 
-                                    Posee un modal para la inserción de nuevas imágenes que
-                                    mediante ORM se ingresan a la base de datos y desde allí se recuperan
-                                    mediante una API que es ingresada al frontend con la instancia de Vue.
-                                </p>
-                                <a href="https://github.com/MolinaEsteban96/ImageClopedia" class="text-dark" style="text-decoration:none;" target="_blank"><h6>Ver en <img src="assets/imgs/github.svg" alt="githublogo" style="height: 45px; width: 45px;"></h6></a>
-                            </div>
-                        </div>
+                        </transition>
+                        
                         <div class="row mt-5 text-center">
-                            <div class="col-md-12">
+                            <div class="col-md-12" id="selector">
                                 <h3 @click="projectRow = 1">Siguiente</h3>
                             </div>
                         </div>
@@ -170,10 +173,10 @@
                             </div>
                         </div>
                         <div class="row mt-5 text-center">
-                            <div class="col-md-6">
+                            <div class="col-md-6" id="selector">
                                 <h3 @click="projectRow = 0">Anterior</h3>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-6" id="selector">
                                 <h3 @click="projectRow = 2">Siguiente</h3>
                             </div>
                         </div>
@@ -194,10 +197,10 @@
                             </div>
                         </div>
                         <div class="row mt-5 text-center">
-                            <div class="col-md-6">
+                            <div class="col-md-6" id="selector">
                                 <h3 @click="projectRow = 1">Anterior</h3>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-6" id="selector">
                                 <h3 @click="projectRow = 3">Siguiente</h3>
                             </div>
                         </div>
@@ -217,7 +220,7 @@
                             </div>
                         </div>
                         <div class="row mt-5 text-center">
-                            <div class="col-md-12">
+                            <div class="col-md-12" id="selector">
                                 <h3 @click="projectRow = 2">Anterior</h3>
                             </div>
                         </div>
