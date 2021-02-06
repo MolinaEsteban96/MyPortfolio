@@ -114,6 +114,9 @@
                                     <img class="px-4" src="assets/imgs/spring.svg" alt="springlogo">
                                     <img class="px-4" src="assets/imgs/mysql.svg" alt="mysqllogo">
                                     <img class="px-2" src="assets/imgs/hibernate.svg" alt="hibernatelogo">
+                                    <img src="assets/imgs/nodejs.svg" alt="nodejslogo" class="px-2">
+                                    <img src="assets/imgs/express.svg" alt="expresslogo" class="px-2">
+                                    <img src="assets/imgs/sequelize.svg" alt="sequelizelogo" class="px-2">
                                 </div>
                             </transition>
                         </div>
@@ -154,7 +157,7 @@
                         
                         <div class="row mt-5 text-center">
                             <div class="col-md-12" id="selector">
-                                <h3 @click="projectRow = 1">Siguiente</h3>
+                                <h3 @click="projectRow += 1">Siguiente</h3>
                             </div>
                         </div>
                     </div>
@@ -174,14 +177,37 @@
                         </div>
                         <div class="row mt-5 text-center">
                             <div class="col-md-6" id="selector">
-                                <h3 @click="projectRow = 0">Anterior</h3>
+                                <h3 @click="projectRow -= 1">Anterior</h3>
                             </div>
                             <div class="col-md-6" id="selector">
-                                <h3 @click="projectRow = 2">Siguiente</h3>
+                                <h3 @click="projectRow += 1">Siguiente</h3>
                             </div>
                         </div>
                     </div>
                     <div v-if="projectRow == 2">
+                        <div class="row mt-5 text-center">
+                            <div class="col-md-6">
+                                <div style="width:100%;height:0px;position:relative;padding-bottom:56.250%;"><iframe src="https://streamable.com/e/0883if" frameborder="0" width="100%" height="100%" allowfullscreen style="width:100%;height:100%;position:absolute;left:0px;top:0px;overflow:hidden;"></iframe></div>
+                            </div>
+                            <div class="col-md-6 m-auto">
+                                <h2>Aplicación para el consumo de ApiTransporte del Gob. de la Ciudad</h2>
+                                <p>
+                                    Consumo de API para saber la entrada y salida de subtes desde las estaciones cabecera.
+                                </p>
+                                <a href="https://sleepy-fortress-31279.herokuapp.com" class="text-dark mt-3" style="text-decoration:none;" target="_blank"><h6>Ver la página</h6></a>
+                                <a href="https://github.com/MolinaEsteban96/SubtesBaires" class="text-dark" style="text-decoration:none;" target="_blank"><h6>Ver en <img src="assets/imgs/github.svg" alt="githublogo" style="height: 45px; width: 45px;"></h6></a>
+                            </div>
+                        </div>
+                        <div class="row mt-5 text-center">
+                            <div class="col-md-6" id="selector">
+                                <h3 @click="projectRow -= 1">Anterior</h3>
+                            </div>
+                            <div class="col-md-6" id="selector">
+                                <h3 @click="projectRow += 1">Siguiente</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div v-if="projectRow == 3">
                         <div class="row mt-5 text-center">
                             <div class="col-md-6">
                                 <div style="width:100%;height:0px;position:relative;padding-bottom:56.388%;"><iframe src="https://streamable.com/e/3yascq" frameborder="0" width="100%" height="100%" allowfullscreen style="width:100%;height:100%;position:absolute;left:0px;top:0px;overflow:hidden;"></iframe></div>
@@ -198,14 +224,14 @@
                         </div>
                         <div class="row mt-5 text-center">
                             <div class="col-md-6" id="selector">
-                                <h3 @click="projectRow = 1">Anterior</h3>
+                                <h3 @click="projectRow -= 1">Anterior</h3>
                             </div>
                             <div class="col-md-6" id="selector">
-                                <h3 @click="projectRow = 3">Siguiente</h3>
+                                <h3 @click="projectRow += 1">Siguiente</h3>
                             </div>
                         </div>
                     </div>
-                    <div v-if="projectRow == 3">
+                    <div v-if="projectRow == 4">
                         <div class="row mt-5 text-center">
                             <div class="col-md-6">
                                 <div style="width:92%;height:0px;position:relative;left:20px ;padding-bottom:56.388%;"><iframe src="https://streamable.com/e/klu3n7" frameborder="0" width="100%" height="100%" allowfullscreen style="width:100%;height:100%;position:absolute;left:0px;top:0px;overflow:hidden;"></iframe></div>
@@ -221,7 +247,7 @@
                         </div>
                         <div class="row mt-5 text-center">
                             <div class="col-md-12" id="selector">
-                                <h3 @click="projectRow = 2">Anterior</h3>
+                                <h3 @click="projectRow -= 1">Anterior</h3>
                             </div>
                         </div>
                     </div>
